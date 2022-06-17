@@ -1,0 +1,66 @@
+CRITICAL - 2022-06-05 20:04:48 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+in SYSTEMPATH\CodeIgniter.php on line 231.
+ 1 SYSTEMPATH\CodeIgniter.php(231): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbstring')
+ 2 SYSTEMPATH\CodeIgniter.php(189): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(71): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-06-05 20:04:48 --> Uncaught Error: Call to undefined function CodeIgniter\CLI\mb_strpos() in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php:776
+Stack trace:
+#0 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php(161): CodeIgniter\CLI\CLI::parseCommandLine()
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php(1018): CodeIgniter\CLI\CLI::init()
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(284): include_once('C:\\Users\\Elen\\D...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Elen\\D...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('CodeIgniter\\CLI...')
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Views\errors\cli\error_exception.php(6): CodeIgniter\Autoloader\Autoloader->loadClass('CodeIgniter\\CLI...')
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Views\errors\cli\production.php(5): include('C:\\Users\\Elen\\D...')
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(239): include('C:\\Users\\Elen\\D...')
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(242): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(126): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\FrameworkException), 500)
+#10 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\FrameworkException))
+#11 {main}
+  thrown
+in SYSTEMPATH\CLI\CLI.php on line 776.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-06-05 20:05:34 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+in SYSTEMPATH\CodeIgniter.php on line 231.
+ 1 SYSTEMPATH\CodeIgniter.php(231): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbstring')
+ 2 SYSTEMPATH\CodeIgniter.php(189): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(71): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-06-05 20:05:34 --> Uncaught Error: Call to undefined function CodeIgniter\CLI\mb_strpos() in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php:776
+Stack trace:
+#0 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php(161): CodeIgniter\CLI\CLI::parseCommandLine()
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php(1018): CodeIgniter\CLI\CLI::init()
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(284): include_once('C:\\Users\\Elen\\D...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Elen\\D...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('CodeIgniter\\CLI...')
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Views\errors\cli\error_exception.php(6): CodeIgniter\Autoloader\Autoloader->loadClass('CodeIgniter\\CLI...')
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Views\errors\cli\production.php(5): include('C:\\Users\\Elen\\D...')
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(239): include('C:\\Users\\Elen\\D...')
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(242): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(126): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\FrameworkException), 500)
+#10 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\FrameworkException))
+#11 {main}
+  thrown
+in SYSTEMPATH\CLI\CLI.php on line 776.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-06-05 20:08:31 --> The framework needs the following extension(s) installed and loaded: curl, intl, mbstring.
+in SYSTEMPATH\CodeIgniter.php on line 231.
+ 1 SYSTEMPATH\CodeIgniter.php(231): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('curl, intl, mbstring')
+ 2 SYSTEMPATH\CodeIgniter.php(189): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 ROOTPATH\spark(71): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-06-05 20:08:31 --> Uncaught Error: Call to undefined function CodeIgniter\CLI\mb_strpos() in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php:776
+Stack trace:
+#0 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php(161): CodeIgniter\CLI\CLI::parseCommandLine()
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CLI\CLI.php(1018): CodeIgniter\CLI\CLI::init()
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(284): include_once('C:\\Users\\Elen\\D...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(261): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\Users\\Elen\\D...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Autoloader\Autoloader.php(239): CodeIgniter\Autoloader\Autoloader->loadInNamespace('CodeIgniter\\CLI...')
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Views\errors\cli\error_exception.php(6): CodeIgniter\Autoloader\Autoloader->loadClass('CodeIgniter\\CLI...')
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Views\errors\cli\production.php(5): include('C:\\Users\\Elen\\D...')
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(239): include('C:\\Users\\Elen\\D...')
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(242): CodeIgniter\Debug\Exceptions->CodeIgniter\Debug\{closure}()
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Debug\Exceptions.php(126): CodeIgniter\Debug\Exceptions->render(Object(CodeIgniter\Exceptions\FrameworkException), 500)
+#10 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\FrameworkException))
+#11 {main}
+  thrown
+in SYSTEMPATH\CLI\CLI.php on line 776.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

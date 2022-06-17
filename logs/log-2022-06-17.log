@@ -1,0 +1,386 @@
+CRITICAL - 2022-06-17 00:10:21 --> Undefined property: App\Controllers\Home::$session
+in APPPATH\Controllers\Home.php on line 61.
+ 1 APPPATH\Controllers\Home.php(61): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$session', 'APPPATH\\Controllers\\Home.php', 61)
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->sessaoUsuario()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:25:24 --> Too few arguments to function App\Models\Transacao_Model::getTransacoes(), 0 passed in C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php on line 49 and exactly 2 expected
+in APPPATH\Models\Transacao_Model.php on line 16.
+ 1 APPPATH\Controllers\Home.php(49): App\Models\Transacao_Model->getTransacoes()
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:29:12 --> Undefined variable $db_connect
+in APPPATH\Models\Transacao_Model.php on line 17.
+ 1 APPPATH\Models\Transacao_Model.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $db_connect', 'APPPATH\\Models\\Transacao_Model.php', 17)
+ 2 APPPATH\Controllers\Home.php(51): App\Models\Transacao_Model->getTransacoes([...], [...])
+ 3 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 4 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 08:29:51 --> ErrorException: pg_query(): Query failed: ERRO:  coluna conta.cod_conta não existe
+LINE 4: JOIN &quot;conta&quot; ON &quot;transacao&quot;.&quot;conta_origem&quot;=&quot;conta&quot;.&quot;cod_cont...
+                                                   ^ in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Transacao_Model.php(34): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(51): App\Models\Transacao_Model->getTransacoes(Array, Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->teste()
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#12 {main}
+CRITICAL - 2022-06-17 08:29:51 --> pg_query(): Query failed: ERRO:  coluna conta.cod_conta não existe
+LINE 4: JOIN &quot;conta&quot; ON &quot;transacao&quot;.&quot;conta_origem&quot;=&quot;conta&quot;.&quot;cod_cont...
+                                                   ^
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  coluna conta.cod_conta não existe
+LINE 4: JOIN &quot;conta&quot; ON &quot;transacao&quot;.&quot;conta_origem&quot;=&quot;conta&quot;.&quot;cod_cont...
+                                                   ^', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "transacao"
+JOIN "operacao" ON "transacao"."operacao"="operacao"."cod_operacao"
+JOIN "conta" ON "transacao"."conta_origem"="conta"."cod_conta"
+WHERE "operacao"."cod_operacao" IN (2,3,5)
+AND "conta"."cod_conta" IN (3)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "transacao"
+JOIN "operacao" ON "transacao"."operacao"="operacao"."cod_operacao"
+JOIN "conta" ON "transacao"."conta_origem"="conta"."cod_conta"
+WHERE "operacao"."cod_operacao" IN (2,3,5)
+AND "conta"."cod_conta" IN (3)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "transacao"
+JOIN "operacao" ON "transacao"."operacao"="operacao"."cod_operacao"
+JOIN "conta" ON "transacao"."conta_origem"="conta"."cod_conta"
+WHERE "operacao"."cod_operacao" IN (2,3,5)
+AND "conta"."cod_conta" IN (3)')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "transacao"
+JOIN "operacao" ON "transacao"."operacao"="operacao"."cod_operacao"
+JOIN "conta" ON "transacao"."conta_origem"="conta"."cod_conta"
+WHERE "operacao"."cod_operacao" IN :operacao.cod_operacao:
+AND "conta"."cod_conta" IN :conta.cod_conta:', [...], false)
+ 6 APPPATH\Models\Transacao_Model.php(34): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\Home.php(51): App\Models\Transacao_Model->getTransacoes([...], [...])
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 9 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:33:25 --> Object of class CodeIgniter\Database\Postgre\Result could not be converted to string
+in APPPATH\Models\Transacao_Model.php on line 34.
+ 1 APPPATH\Controllers\Home.php(51): App\Models\Transacao_Model->getTransacoes([...], [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:33:43 --> Object of class CodeIgniter\Database\Postgre\Result could not be converted to string
+in APPPATH\Models\Transacao_Model.php on line 34.
+ 1 APPPATH\Controllers\Home.php(51): App\Models\Transacao_Model->getTransacoes([...], [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 08:37:00 --> Object of class stdClass could not be converted to string
+in APPPATH\Models\Transacao_Model.php on line 39.
+ 1 APPPATH\Controllers\Home.php(51): App\Models\Transacao_Model->getTransacoes([...], [...])
+ 2 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 3 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 08:55:10 --> ErrorException: pg_query(): Query failed: ERRO:  operador não existe: character varying = integer
+LINE 4: WHERE &quot;usuario&quot;.&quot;username&quot; IN (1,2,3)
+                                   ^
+HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas. in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'SELECT *\nFROM "...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('SELECT *\nFROM "...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM "...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM "...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Conta_Model.php(26): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(54): App\Models\Conta_Model->getContas(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->teste()
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#12 {main}
+CRITICAL - 2022-06-17 08:55:10 --> pg_query(): Query failed: ERRO:  operador não existe: character varying = integer
+LINE 4: WHERE &quot;usuario&quot;.&quot;username&quot; IN (1,2,3)
+                                   ^
+HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas.
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  operador não existe: character varying = integer
+LINE 4: WHERE &quot;usuario&quot;.&quot;username&quot; IN (1,2,3)
+                                   ^
+HINT:  Nenhum operador corresponde com o nome e o(s) tipo(s) de argumento(s) informados. Você precisa adicionar conversões de tipo explícitas.', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'SELECT *
+FROM "conta"
+JOIN "usuario" ON "conta"."usuario"="usuario"."username"
+WHERE "usuario"."username" IN (1,2,3)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('SELECT *
+FROM "conta"
+JOIN "usuario" ON "conta"."usuario"="usuario"."username"
+WHERE "usuario"."username" IN (1,2,3)')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM "conta"
+JOIN "usuario" ON "conta"."usuario"="usuario"."username"
+WHERE "usuario"."username" IN (1,2,3)')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM "conta"
+JOIN "usuario" ON "conta"."usuario"="usuario"."username"
+WHERE "usuario"."username" IN :usuario.username:', [...], false)
+ 6 APPPATH\Models\Conta_Model.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 7 APPPATH\Controllers\Home.php(54): App\Models\Conta_Model->getContas([...])
+ 8 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->teste()
+ 9 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-06-17 09:49:13 --> Call to undefined function App\Controllers\cadastrarNovoUsuario()
+in APPPATH\Controllers\Home.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 09:50:14 --> ErrorException: pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6). in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(666): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Usuario_Model.php(30): CodeIgniter\Model->insert(Array)
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste12345')
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#15 {main}
+CRITICAL - 2022-06-17 09:50:14 --> pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6).', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "usuario" ("nome", "senha") VALUES (:nome:, :senha:)', [...], false)
+ 6 SYSTEMPATH\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([...], true)
+ 9 APPPATH\Models\Usuario_Model.php(30): CodeIgniter\Model->insert([...])
+10 APPPATH\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste12345')
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 09:51:07 --> ErrorException: pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6). in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(666): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Usuario_Model.php(30): CodeIgniter\Model->insert(Array)
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste12345')
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#15 {main}
+CRITICAL - 2022-06-17 09:51:07 --> pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6).', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "usuario" ("nome", "senha") VALUES (:nome:, :senha:)', [...], false)
+ 6 SYSTEMPATH\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([...], true)
+ 9 APPPATH\Models\Usuario_Model.php(30): CodeIgniter\Model->insert([...])
+10 APPPATH\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste12345')
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 09:53:42 --> ErrorException: pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6). in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(666): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Usuario_Model.php(30): CodeIgniter\Model->insert(Array)
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste12345')
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#15 {main}
+CRITICAL - 2022-06-17 09:53:42 --> pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, e602a3f35f680b48b5d3c0e84deeddc6).', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'e602a3f35f680b48b5d3c0e84deeddc6\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "usuario" ("nome", "senha") VALUES (:nome:, :senha:)', [...], false)
+ 6 SYSTEMPATH\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([...], true)
+ 9 APPPATH\Models\Usuario_Model.php(30): CodeIgniter\Model->insert([...])
+10 APPPATH\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste12345')
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 09:56:24 --> ErrorException: pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, aa1bf4646de67fd9086cf6c79007026c). in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(666): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Usuario_Model.php(31): CodeIgniter\Model->insert(Array)
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste123')
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#15 {main}
+CRITICAL - 2022-06-17 09:56:24 --> pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, aa1bf4646de67fd9086cf6c79007026c).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, aa1bf4646de67fd9086cf6c79007026c).', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'aa1bf4646de67fd9086cf6c79007026c\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'aa1bf4646de67fd9086cf6c79007026c\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'aa1bf4646de67fd9086cf6c79007026c\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "usuario" ("nome", "senha") VALUES (:nome:, :senha:)', [...], false)
+ 6 SYSTEMPATH\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([...], true)
+ 9 APPPATH\Models\Usuario_Model.php(31): CodeIgniter\Model->insert([...])
+10 APPPATH\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste123')
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 09:57:26 --> ErrorException: pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, aa1bf4646de67fd9086cf6c79007026c). in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "us...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "us...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "us...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "us...', Array, false)
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(666): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Usuario_Model.php(32): CodeIgniter\Model->insert(Array)
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste123')
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#15 {main}
+CRITICAL - 2022-06-17 09:57:26 --> pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, aa1bf4646de67fd9086cf6c79007026c).
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  valor nulo na coluna &quot;username&quot; viola a restrição não-nula
+DETAIL:  Registro que falhou contém (null, Joao de Souza, aa1bf4646de67fd9086cf6c79007026c).', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'aa1bf4646de67fd9086cf6c79007026c\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'aa1bf4646de67fd9086cf6c79007026c\')')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO "usuario" ("nome", "senha") VALUES (\'Joao de Souza\', \'aa1bf4646de67fd9086cf6c79007026c\')')
+ 5 SYSTEMPATH\Database\BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query('INSERT INTO "usuario" ("nome", "senha") VALUES (:nome:, :senha:)', [...], false)
+ 6 SYSTEMPATH\Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 7 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([...], true)
+ 9 APPPATH\Models\Usuario_Model.php(32): CodeIgniter\Model->insert([...])
+10 APPPATH\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste123')
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-06-17 10:01:15 --> ErrorException: pg_query(): Query failed: ERRO:  lastval ainda não foi definido nesta sessão in C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php:135
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Que...', 'C:\\Users\\Elen\\D...', 135)
+#1 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'SELECT LASTVAL(...')
+#2 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('SELECT LASTVAL(...')
+#3 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT LASTVAL(...')
+#4 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Database\Postgre\Connection.php(410): CodeIgniter\Database\BaseConnection->query('SELECT LASTVAL(...')
+#5 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(282): CodeIgniter\Database\Postgre\Connection->insertID()
+#6 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\BaseModel.php(738): CodeIgniter\Model->doInsert(Array)
+#7 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Model.php(666): CodeIgniter\BaseModel->insert(Array, true)
+#8 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Models\Usuario_Model.php(32): CodeIgniter\Model->insert(Array)
+#9 C:\Users\Elen\Documents\anaclara\Codeigniter4\app\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste123')
+#10 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+#11 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#12 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\Users\Elen\Documents\anaclara\Codeigniter4\public\index.php(55): CodeIgniter\CodeIgniter->run()
+#14 C:\Users\Elen\Documents\anaclara\Codeigniter4\system\Commands\Server\rewrite.php(43): require_once('C:\\Users\\Elen\\D...')
+#15 {main}
+CRITICAL - 2022-06-17 10:01:15 --> pg_query(): Query failed: ERRO:  lastval ainda não foi definido nesta sessão
+in SYSTEMPATH\Database\Postgre\Connection.php on line 135.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'pg_query(): Query failed: ERRO:  lastval ainda não foi definido nesta sessão', 'SYSTEMPATH\\Database\\Postgre\\Connection.php', 135)
+ 2 SYSTEMPATH\Database\Postgre\Connection.php(135): pg_query(Object(PgSql\Connection), 'SELECT LASTVAL() AS ins_id')
+ 3 SYSTEMPATH\Database\BaseConnection.php(678): CodeIgniter\Database\Postgre\Connection->execute('SELECT LASTVAL() AS ins_id')
+ 4 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT LASTVAL() AS ins_id')
+ 5 SYSTEMPATH\Database\Postgre\Connection.php(410): CodeIgniter\Database\BaseConnection->query('SELECT LASTVAL() AS ins_id')
+ 6 SYSTEMPATH\Model.php(282): CodeIgniter\Database\Postgre\Connection->insertID()
+ 7 SYSTEMPATH\BaseModel.php(738): CodeIgniter\Model->doInsert([...])
+ 8 SYSTEMPATH\Model.php(666): CodeIgniter\BaseModel->insert([...], true)
+ 9 APPPATH\Models\Usuario_Model.php(32): CodeIgniter\Model->insert([...])
+10 APPPATH\Controllers\Home.php(29): App\Models\Usuario_Model->cadastrarNovoUsuario('joaosouza', 'Joao de Souza', 'teste123')
+11 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Home->processaCadastroNovoUsuario()
+12 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+13 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+14 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+15 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
