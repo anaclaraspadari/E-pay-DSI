@@ -39,14 +39,23 @@ $routes->get('/', 'Home::index');
 $routes->add('registration','Home::cadastroUsuario');
 $routes->add('sessaoUsuario','Home::sessaoUsuario');
 $routes->add('menu','Home::menu');
+$routes->add('deposito','Home::deposito');
 $routes->add('extrato','Home::extrato');
 $routes->add('pagamento','Home::pagamento');
 $routes->add('transferencia','Home::transferencia');
 $routes->add('poupanca','Home::poupanca');
 $routes->add('poupanca/aplicacao','Home::aplicacao');
 $routes->add('poupanca/resgate','Home::resgate');
-$routes->add('teste','Home::teste');
+//$routes->add('teste','Home::teste');
+//$routes->add('dadosconta','Home::dadosconta');
+$routes->add('saldoinicial','Home::saldoinicial');
+$routes->add('logoutSessaoUsuario','Home::logoutSessaoUsuario');
 $routes->post('processaNovoUsuario','Home::processaCadastroNovoUsuario');
+$routes->post('processaNovoPagamento','Home::processaNovoPagamento');
+$routes->post('processaNovaTransferencia','Home::processaNovaTransferencia');
+$routes->post('processaNovaAplicacao','Home::processaNovaAplicacao');
+$routes->post('processaNovoResgate','Home::processaNovoResgate');
+$routes->post('processaNovoDeposito','Home::processaNovoDeposito');
 
 
 /*
